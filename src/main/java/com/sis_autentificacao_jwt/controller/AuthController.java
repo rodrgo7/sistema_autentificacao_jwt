@@ -1,5 +1,6 @@
 package com.sis_autentificacao_jwt.controller;
 
+import com.sis_autentificacao_jwt.dto.LoginRequest;
 import com.sis_autentificacao_jwt.dto.RegisterRequest;
 import com.sis_autentificacao_jwt.service.AuthService;
 import org.springframework.http.ResponseEntity;
@@ -23,4 +24,10 @@ public class AuthController {
 
         return ResponseEntity.ok("Usuário registrado com sucesso!");
     }
+
+    @PostMapping("/login")
+    public ResponseEntity<?> login(@RequestBody LoginRequest request) {
+        return ResponseEntity.ok(authService.login(request));
+    }
+
 }
