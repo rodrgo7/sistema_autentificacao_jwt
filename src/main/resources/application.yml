@@ -4,3 +4,6 @@ spring:
       uri: mongodb://localhost:27017/sisauthdb
   application:
     name: auth-jwt-api
+app:
+  jwt:
+    secret: Dllj1YOnJ5fFkRCSFzKkQnec7d3/+zaQbKul/y9iM0k= # (Base64)
