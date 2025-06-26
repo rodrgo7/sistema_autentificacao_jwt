@@ -1,0 +1,19 @@
+# docker-compose.yml
+version: '3.8'
+
+services:
+  mongo:
+    image: mongo
+    container_name: mongo-jwt
+    ports:
+      - "27017:27017"
+
+  app:
+    build: .
+    container_name: auth-jwt-api
+    ports:
+      - "8080:8080"
+    depends_on:
+      - mongo
+    environment:
+      - SPRING_DATA_MONGODB_URI=mongodb://mongo:27017/authdb
